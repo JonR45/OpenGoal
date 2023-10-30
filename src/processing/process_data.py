@@ -1,6 +1,7 @@
 # process_data.py
 
-"""Module contains functions that processes the JSON data retrieved from the YouTube API.
+"""Module contains functions that processes the JSON data retrieved from the
+YouTube API.
 
 Functions include:
 
@@ -46,7 +47,7 @@ def load_all_json_files(folder_path):
     # create empty list - this will be populated with all the json files that we want to combine
     data = []
     
-    # loop through the files in the foler and append them to the list
+    # loop through the files in the foler and append them to the list
     for file in glob.glob(input_path):
         with open(file, "r") as f:
             data.append(json.loads(f.read()))

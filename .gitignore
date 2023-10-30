@@ -3,20 +3,16 @@
 
 
 ### checkpoints and pycache
-
 /data/final/.ipynb_checkpoints/**
 /data/final/.__pycache__/**
 /data/processed/.ipynb_checkpoints/**
 /data/processed/.__pycache__/**
 /data/raw/.ipynb_checkpoints/**
 /data/raw/.__pycache__/**
-
 /images/.ipynb_checkpoints/**
-
 /.ipynb_checkpoints/**
-
 /notebooks/.ipynb_checkpoints/**
-
+/__pycache__/**
 /src/.ipynb_checkpoints/**
 /src/data/.ipynb_checkpoints/**
 /src/data/__pycache__/**
@@ -42,10 +38,8 @@
 
 ### data
 
-
 ### folders
 /docs/references/channel_id
-
 
 ### images
 

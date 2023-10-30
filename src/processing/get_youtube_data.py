@@ -1,3 +1,4 @@
+# get_youtube_data.py
 """Contains class and methods for obtaining YouTube channel and video data.
 
 Class YouTubeStats:
@@ -368,7 +369,7 @@ class YouTubeStats:
         data_processed_folder = "data/raw/JSON_response"
 
         # create name of the json file we'll save
-        file_name = f"{self.channel_title}_vids_from_{pub_after}--{pub_before}.json"
+        file_name = f"{self.channel_title}_vids_{pub_after}--{pub_before}.json"
 
         # join cwd, folder name and file name to set the file path
         file_path = os.path.join(current_working_directory, data_processed_folder, file_name)
