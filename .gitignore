@@ -8,6 +8,7 @@
 /data/processed/.ipynb_checkpoints/**
 /data/processed/.__pycache__/**
 /data/raw/.ipynb_checkpoints/**
+/data/raw/JSON_response/.ipynb_checkpoints/**
 /data/raw/.__pycache__/**
 /images/.ipynb_checkpoints/**
 /.ipynb_checkpoints/**
