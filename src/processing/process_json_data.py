@@ -110,7 +110,6 @@ def json_response_to_dataframe(json_response_data):
     Notes
     -----
     
-    
     """
     # get channel ID by grabbing it from the first JSON file (the key of each file is the channel ID) 
     channel_id = [key for key in json_response_data[0].keys()][0]
@@ -266,7 +265,6 @@ def duration_to_hhmmss(duration):
         - Create a quickly interpretable duration column with:
         
                 df['duration_string'] = df['duration'].apply(lambda x: duration_to_hhmmss(x)[1])
-
     
     """
     
