@@ -184,14 +184,6 @@ def json_response_to_dataframe(json_response_data):
     
     return df
 
-    
-
-
-
-
-
-# function that keeps only the data we want
-
 
 
 

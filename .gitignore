@@ -17,14 +17,13 @@
 /src/.ipynb_checkpoints/**
 /src/data/.ipynb_checkpoints/**
 /src/data/__pycache__/**
-/src/exploration/ipynb_checkpoints/**
+/src/exploration/.ipynb_checkpoints/**
 /src/exploration/__pycache__/**
 /src/evaluation/.ipynb_checkpoints/**
 /src/evaluation/__pycache__/**
 /src/models/.ipynb_checkpoints/**
 /src/models/__pycache__/**
 /src/processing/__pycache__/**
-/src/processing/.ipynb_checkpoints/**
 /src/processing/.ipynb_checkpoints/**
 /src/processing/__pycache__/**
 /src/__pycache__/**
