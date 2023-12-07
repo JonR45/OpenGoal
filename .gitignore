@@ -40,6 +40,7 @@
 
 ### folders
 /docs/references/channel_id
+/docs/**
 
 ### images
 
@@ -48,6 +49,7 @@
 /notebooks/~plan.ipynb
 /notebooks/~notes.ipynb
 /notebooks/process_json_data.ipynb
+/notebooks/6_dash.ipynb
 
 
 ### .py files
@@ -58,6 +60,8 @@
 /.idea/**
 /.venv/**
 /.vscode/**
+/.git/
+/.idea/
 
 
 ### other
