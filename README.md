@@ -1,10 +1,17 @@
-# PROJCT TTILE
+# OpenGoal
 
-# Project Overview
+## Question to answer
+Have the YouTube viewing figures for OpenGoal's 'Keeping the Ball on
+the Ground' podcast increased or decreased in the last 5 years?
+
+## Summary of project
+Data visualisation project of YouTube views over time. This project involved:
+- Connecting to YouTube's API to gather channel statistics
+- Processing the JSPN JSON_response
+- Using Python to perform cleaning and processing operations, and visualise
+the output
 
 
-
-# Summary
 - problem, language
 - Dataset
 - model
