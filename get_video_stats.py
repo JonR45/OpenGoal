@@ -1,4 +1,4 @@
-from src.processing.get_youtube_data import YouTubeStats
+from src.api.get_youtube_data import YouTubeStats
 
 # api key from google cloud youtube-channel-analysis project apis and services credentials
 API_KEY = "AIzaSyASfwtKSfUAAGR6DUM0dhmx48AfbZo1MzY"

@@ -41,8 +41,9 @@
 ### folders
 /docs/references/channel_id
 /docs/**
+/old/**
 
-### images
+### images
 
 
 ### notebooks
@@ -54,9 +55,10 @@
 
 ### .py files
 /notebooks/process_json_data.py
+youtube_statistics.py
 
 
-### .folders
+### folders
 /.idea/**
 /.venv/**
 /.vscode/**
@@ -64,5 +66,5 @@
 /.idea/
 
 
-### other
+### other
 .env
