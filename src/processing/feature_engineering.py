@@ -117,7 +117,7 @@ def create_video_counts_columns(df):
     # convert year_month to datetime for easy sorting by date
     video_count_month['yearMonth'] = pd.to_datetime(video_count_month['yearMonth'], format="%Y-%m")
     
-    # add year and month columns for easy merging later
+    # create year and month columns for easy merging later
     video_count_month['year'] = video_count_month['yearMonth'].dt.strftime("%Y")
     video_count_month['month'] = video_count_month['yearMonth'].dt.strftime("%m")
     video_count_month['yearMonth'] = video_count_month['yearMonth'].dt.strftime("%Y-%m")

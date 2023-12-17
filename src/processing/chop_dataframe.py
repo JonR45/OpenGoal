@@ -1,4 +1,4 @@
-# data_manipulation.py
+# chop_dataframe.py
 """Module contains functions that manipulate the dataframe created after processing and cleaning
 the JSON data retrieved from the YouTube API.
 
@@ -104,8 +104,8 @@ def single_metric_dataframes(df, metrics=[]):
 
 
 def split_into_video_series(df, video_series_title=[]):
-    """Takes in a dataframe and the name of a YouTube video series and returns the input dataframe with only
-    the videos whose titles include the 'video_series_title' string in their title.
+    """Takes in a dataframe and the name of a YouTube video series and returns the input dataframe 
+    with only the videos whose titles include the 'video_series_title' string in their title.
     
     Parameters
     ----------
@@ -151,8 +151,8 @@ def split_into_video_series(df, video_series_title=[]):
         # concatenate dataframes, perform sorting and cleaning operations
         df_combined = pd.concat(df_list, ignore_index=True)
         df_combined = (df_combined
+                       .drop_duplicates(subset=["videoID"])
                        .sort_values(by=['publishedAt'])
-                       .drop_duplicates()
                        .reset_index(drop=True))
         
         # return the dataframe
@@ -165,12 +165,15 @@ def split_into_video_series(df, video_series_title=[]):
         df_ = df.loc[df['title'].str.contains(video_series_title[0], case=False)]
         # perform sorting and cleaning operations
         df_ = (df_
+               .drop_duplicates(subset=["videoID"])
                .sort_values(by=['publishedAt'])
-               .drop_duplicates()
-               .reset_index(drop=True))
+               .reset_index(drop=True)
+              )
            
         # return dataframe
         return df_
+
+
     
     else: # no video series names/titles provided
         print("No changes made.")

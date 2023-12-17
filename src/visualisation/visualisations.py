@@ -141,7 +141,7 @@ def viz_video_counts(df, chart_title):
                           "videoCountMonth": "No. of videos in month",
                           "videoCountYear": "No. of videos in year"
                          },
-                 text=df_group['videoCountMonth'],
+                 text=df['videoCountMonth'],
                  title=f"{chart_title}",
                   hover_data=['videoCountMonth', 'videoCountYear'],
                  template='plotly_white'
