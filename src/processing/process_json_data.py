@@ -5,7 +5,7 @@ YouTube API.
 
 Functions include:
 
-    `load_all_json_files(folder_path)`:
+    `combine_all_json_files(folder_path)`:
         Combines multiple JSON files into one file whilst maintaining the same file and JSON structure.
 
     `json_response_to_dataframe(json_response_data)`:
@@ -26,10 +26,10 @@ import datetime
 from datetime import datetime as dt
 import glob
 import re
+import json
 
 
-
-def load_all_json_files(folder_path):
+def combine_all_json_files(folder_path):
     """Combines multiple JSON files into one file whilst maintaining the same
     file and JSON structure.
     
@@ -37,37 +37,36 @@ def load_all_json_files(folder_path):
     -----------
     folder_path: str
         String of the path to the folder that contains the json files you
-        want to combine into one.
+        want to combine into one json file.
     
     
     Returns
     --------
-    "".json: json file
-        File with all the json file contained in the folder path in one
-        json file.
+    'all_json_data.json': json file
+        File with all the json data contained in the individual json files in the folder path.
     
     
     Notes
-    ------
+    -------
 
     """
     
     input_path = folder_path + "/*.json"
-    output_path = "../data/processed/"
+    output_path = "data/processed"
     
     # create empty list - this will be populated with all the json files that we want to combine
     data = []
     
-    # loop through the files in the foler and append them to the list
+    # loop through the files in the foler and append them to the list
     for file in glob.glob(input_path):
         with open(file, "r") as f:
             data.append(json.loads(f.read()))
             
             
-    # create a new timesatamped file with all the json data and ave in the output folder path
-    with open(f"{output_path}/all_json_data_{dt.now().strftime('%Y-%m-%d--T%H-%M-%S')}.json", "w") as f:
+    # create a new file with all the json data and save in the output folder path
+    with open(f"{output_path}/all_json_data.json", "w") as f:
         json.dump(data, f, indent=4)
-    
+        
     return
 
         
@@ -171,7 +170,7 @@ def json_response_to_dataframe(json_response_data):
     
     # loop through the list of video data dictionaries and add the video ID to the dictionary 
     for index, data_dict in enumerate(video_data_dictionaries):
-        data_dict['video_id'] = video_ids[index] 
+        data_dict['videoID'] = video_ids[index] 
     
     # video_data_dictionaries now has the data in a format we can use with pd.json_normalize()
     # to create a dataframe
@@ -240,7 +239,7 @@ def drop_columns(df):
     df_ = df.copy()
     
     # store the columns we want to drop in a list that we'll loop through later
-    cols_to_drop = ['thumbnails.default.url','example', 'thumbnails.default.width',
+    cols_to_drop = ['thumbnails.default.url', 'thumbnails.default.width',
                     'thumbnails.default.height', 'thumbnails.medium.url',
                     'thumbnails.medium.width', 'thumbnails.medium.height',
                     'thumbnails.high.url', 'thumbnails.high.width',
@@ -249,7 +248,9 @@ def drop_columns(df):
                     'thumbnails.maxres.url', 'thumbnails.maxres.width',
                     'thumbnails.maxres.height', 'localized.title', 'localized.description', 
                     'defaultAudioLanguage', 'categoryId', 'liveBroadcastContent', 
-                    'dimension', 'duration', 'definition', 'caption','licensedContent', 
+                    'dimension', 
+                    # 'duration', # keep duration
+                    'definition', 'caption','licensedContent', 
                     'projection', 'regionRestriction.blocked', 'contentRating.ytRating']
     
 
@@ -264,12 +265,5 @@ def drop_columns(df):
             continue
     
     return df_
-    
-
-
-    
-    
-# convert to relevant data types - published at to datetime
-
 
 

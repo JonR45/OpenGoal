@@ -19,7 +19,9 @@ Functions include:
 
 import pandas as pd
 import datetime as dt
+import re
 
+# define a function that counts the number of videos released in a calendar month
 def create_year_month_columns(df):
     """Calculates the number of videos per month and per year based on the date in the 'publishedAt' column.
     
@@ -53,9 +55,29 @@ def create_year_month_columns(df):
     df_.sort_values(by=['publishedAt'], inplace=True)
     df_.reset_index(drop=True, inplace=True)
 
-    df_ = df_[['videoID', 'publishedAt', 'publishedAtYear', 'publishedAtMonth', 'publishedAtYearMonth', 
+    try:
+        df_ = df_[['videoID', 'publishedAt', 'publishedAtYear', 'publishedAtMonth', 'publishedAtYearMonth', 
                'channelTitle', 'channelId',  'title', 'description', 'duration_timedelta', 'duration_hhmmss', 'tags', 
                'viewCount', 'likeCount', 'favoriteCount','commentCount']]
+
+    except KeyError as ke:
+        # store error message (format is "KeyError: ['column_x', 'column_y', ... 'column_n'] not in index")
+        error_message = str(ke)     
+        
+        # Extract the string between square brackets
+        missing_columns_str = error_message.split("'")[1]
+        
+        # Split the string between the square brackets into individual column names
+        missing_columns_list = missing_columns_str.split(", ")
+        
+        # Print the list of missing columns
+        print(f"Warning: {ke}\nDataframe created without these columns.")
+
+        # store remaining columns
+        remaining_columns = [col for col in df_.columns if col not in missing_columns_list]
+        
+        # create dataframe with just remaining columns
+        df_ = df_[remaining_columns]
 
 
     return df_
@@ -131,10 +153,30 @@ def create_video_counts_columns(df):
     df_.sort_values(by=['publishedAt'], inplace=True)
     df_.reset_index(drop=True, inplace=True)
 
-    df_ = df_[['videoID', 'publishedAt', 'publishedAtYear', 'publishedAtMonth', 'publishedAtYearMonth', 
-               'channelTitle', 'channelId',  'title', 'description', 'duration_timedelta', 'duration_hhmmss', 'tags', 
-               'viewCount', 'likeCount', 'favoriteCount','commentCount',
-               'videoCountMonth', 'videoCountYear']]
+    try:
+        df_ = df_[['videoID', 'publishedAt', 'publishedAtYear', 'publishedAtMonth', 'publishedAtYearMonth',
+                   'channelTitle', 'channelId',  'title', 'description', 'duration_timedelta', 'duration_hhmmss', 'tags',
+                   'viewCount', 'likeCount', 'favoriteCount','commentCount',
+                   'videoCountMonth', 'videoCountYear']]
+
+    except KeyError as ke:
+        # store error message (format is "KeyError: ['column_x', 'column_y', ... 'column_n'] not in index")
+        error_message = str(ke)     
+        
+        # Extract the string between square brackets
+        missing_columns_str = error_message.split("'")[1]
+        
+        # Split the string between the square brackets into individual column names
+        missing_columns_list = missing_columns_str.split(", ")
+        
+        # Print the list of missing columns
+        print(f"Warning: {ke}\nDataframe created without these columns.")
+
+        # store remaining columns
+        remaining_columns = [col for col in df_.columns if col not in missing_columns_list]
+        
+        # create dataframe with just remaining columns
+        df_ = df_[remaining_columns]
 
 
     return df_
@@ -179,7 +221,7 @@ def duration_to_hhmmss(duration):
     
     # set duration pattern to capture the YouTube API response which gives duration in format PT1H52M21S
     # for 1 hour, 52 minutes, 21 seconds
-    duration_pattern = "[A-Za-z]+(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?"
+    duration_pattern = r"[A-Za-z]+(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?"
     
     # use regex to compile the pattern
     duration_regex = re.compile(duration_pattern)
@@ -219,7 +261,7 @@ def duration_to_hhmmss(duration):
 #     duration_formatted = dt.strptime(duration_string, "%H:%M:%S")
     
     # use the groups retrieved to create a time object
-    duration_timedelta = datetime.timedelta(days=0, hours=int(hours), minutes=int(minutes), seconds=int(seconds))
+    duration_timedelta = dt.timedelta(days=0, hours=int(hours), minutes=int(minutes), seconds=int(seconds))
     
     return duration_timedelta, duration_string
     

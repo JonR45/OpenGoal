@@ -14,6 +14,11 @@ Functions:
 
 """
 
+import pandas as pd
+import plotly.express as px
+import numpy as np
+
+
 def prep_df_for_visualisation(df):
     """Groups the dataframe so it is structured in a way so that it can be passed
     to the visualisation functions for quick and easy visualisation.
@@ -54,6 +59,8 @@ def prep_df_for_visualisation(df):
                  'videoCountMonth', 'videoCountYear']]
 
     return df_group
+
+
 
 
 def viz_line_chart(df, metric, chart_title):
