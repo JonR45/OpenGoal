@@ -10,6 +10,8 @@ This project involved:
 - Data visualisation with plotly
 
 **Language**: Python
+
+
 **Packages**: pandas, numpy, plotly, regex
 
 
