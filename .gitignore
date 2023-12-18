@@ -41,7 +41,13 @@
 ### folders
 /docs/references/channel_id
 /docs/**
+/.git/**
+/.idea/**
 /old/**
+/.venv/**
+/.vscode/**
+
+
 
 ### images
 
@@ -50,20 +56,17 @@
 /notebooks/~plan.ipynb
 /notebooks/~notes.ipynb
 /notebooks/process_json_data.ipynb
-/notebooks/6_dash.ipynb
+/notebooks/2.0.process_json_data_all_files.ipynb
+/notebooks/3.0.clean_dataframe.ipynb
+/notebooks/5.0.visualise.ipynb
+/notebooks/6.0.dash.ipynb
+
 
 
 ### .py files
 /notebooks/process_json_data.py
 youtube_statistics.py
 
-
-### folders
-/.idea/**
-/.venv/**
-/.vscode/**
-/.git/
-/.idea/
 
 
 ### other

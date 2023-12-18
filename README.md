@@ -1,49 +1,57 @@
 # OpenGoal
+Quick analysis and visualisation of the monthly YouTube viewing figures for OpenGoal's 'Keeping the Ball on
+the Ground' podcast.
 
-## Question to answer
-Have the YouTube viewing figures for OpenGoal's 'Keeping the Ball on
-the Ground' podcast increased or decreased in the last 5 years?
-
-## Summary of project
-Data visualisation project of YouTube views over time. This project involved:
+## Project summary
+This project involved:
 - Connecting to YouTube's API to gather channel statistics
-- Processing the JSPN JSON_response
-- Using Python to perform cleaning and processing operations, and visualise
-the output
+- Processing the JSON response
+- Using Python to perform data cleaning and processing operations
+- Data visualisation with plotly
 
+**Language**: Python
+**Packages**: pandas, numpy, plotly, regex
 
-- problem, language
-- Dataset
-- model
-- interesting tidbits
-- conclusion
-
-
-# Model
-## Error rates
 
 # Analysis
-
-# Visualisation
-
-# Next steps
-
-# Installation and Running the Project
-
-
-
-You want an average technically competent stranger to be able to read your README file and then run the project on their own. This ensures that more technical hiring managers can reproduce your work and check your code. You can find good README examples
-here and here.  https://github.com/VikParuchuri/apartment-finder/blob/master/README.md
-https://github.com/dataquestio/loan-prediction/blob/master/README.md
+### Keeping the Ball on the Ground and OpenGoal meets monthly views
+![graph showing monthly views](images/OpenGoal_Keeping_the_Ball_on_the_Ground_viewCount_per_month.png)
+![graph showing view count per month](images/OpenGoal_Keeping_the_Ball_on_the_Ground_likeCount_per_month.png)
+![graph showing view count per month](images/OpenGoal_Keeping_the_Ball_on_the_Ground_commentCount_per_month.png)
+![graph showing view count per month](images/OpenGoal_meets_viewCount_per_month.png)
+![graph showing view count per month](images/OpenGoal_meets_likeCount_per_month.png)
+![graph showing view count per month](images/OpenGoal_meets_commentCount_per_month.png)
 
 
-Ideally, you’d also want:
-•	Some bullet points with interesting observations you found in exploration
-•	Any interesting charts or diagrams you created
-•	Information about the model, such as algorithm
-•	Error rates and other information about the predictions
-•	Any notes about real-world usage of the model
-The summary here is that the README is the best way to sell your project, and you shouldn’t neglected. Don’t spend a lot of effort making a good project, then have people skip looking through it because they don’t find it interesting!
 
 
-It’s important to go through the installation steps yourself in a new folder or on a new computer, to make sure everything works.
+### Top 10 most viewed episodes (as of Nov 2023)
+#### Keeping the Ball on the Ground
+1. KIERAN TIERNEY | Keeping the Ball on the Ground (584371)
+2. BARRY FERGUSON & SLANEY REUNITED! | Keeping the Ball on the Ground (345344)
+3. AIDEN McGEADY | Keeping the Ball on the Ground (334937)
+4. Keeping the Ball on the Ground | Charlie Mulgrew, Simon Ferry and Paul Slane (279470)
+5. REVIEW OF CELTIC VS RANGERS w/ BARRY FERGUSON | Keeping the Ball on the Ground (259410)
+6. Charlie Mulgrew is Back! | Keeping the Ball on the Ground (222783)
+7. CHARLIE MULGREW RETURNS! | Keeping The Ball On The Ground (177784)
+8. JOHN HIGGINS | Keeping the Ball on the Ground (177153)
+9. RANGERS v CELTIC REVIEW w/ BARRY FERGUSON | Keeping the Ball on the Ground (175633)
+10. SI & HALLIDAY HEATED DEBATE KICKS OFF! | Keeping the Ball on the Ground (174558)
+
+
+
+#### OpenGoal Meets...
+1. JAMIE CARRAGHER | Open Goal Meets... (855101)
+2. Si Ferry Meets... Ally McCoist (752340)
+3. Si Ferry Meets... Andy Halliday | Life at Rangers w/ Gerrard, Warburton & Pedro, Teammates & Stories (608241)
+4. FUNNY ANGE POSTECOGLOU INTERVIEW | Open Goal Meets... Celtic (Now Spurs) Manager (308245)
+5. Si Ferry Meets... Ian Durrant & Derek Ferguson - The Rangers Days (304129)
+6. CHRIS SUTTON | Open Goal Meets... former Celtic, Blackburn & Chelsea Striker For Candid Interview (260215)
+7. Si Ferry Meets... Andy Robertson - Rise to Liverpool & Scotland Captain via Queens Park, DUFC & Hull (234839)
+8. Si Ferry Meets... Gordon Strachan (231435)
+9. ANGE POSTECOGLOU IS BACK ON THE SHOW! | Open Goal Meets... Glen's Vodka February MOTM (193134)
+10. Si Ferry Meets...Barry Ferguson Episode 1 - Rangers Education, Breaking into 1st Team, Captaincy (192150)
+
+
+
+

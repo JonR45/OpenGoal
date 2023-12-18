@@ -70,7 +70,8 @@ def single_metric_dataframes(df, metrics=[]):
         v = str(v)
         
         try: 
-            df_ = (df[['videoID', 'title', 'publishedAt', v]]
+            df_ = (df[['videoID', 'title', 
+                       'publishedAt', 'publishedAtYear', v]]
                 .sort_values(by=[v], ascending=False, axis=0)
                 .reset_index(drop=True))
 

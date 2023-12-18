@@ -17,6 +17,7 @@ Functions:
 import pandas as pd
 import plotly.express as px
 import numpy as np
+import re
 
 
 def prep_df_for_visualisation(df):
@@ -48,7 +49,7 @@ def prep_df_for_visualisation(df):
         ]
         .sum()
         .astype(int)
-        .sort_values(["publishedAtYear", "publishedAtMonth"], ascending=True)
+        .sort_values(["publishedAtYearMonth"], ascending=True)
         )
     
     df_group.reset_index(inplace=True)
@@ -62,7 +63,7 @@ def prep_df_for_visualisation(df):
 
 
 
-
+# define a function that visualises the volume of a metric over time, given a dataframe and a metric name as input
 def viz_line_chart(df, metric, chart_title):
     """Returns a line chart given a dataframe and metric.
 
@@ -108,11 +109,17 @@ def viz_line_chart(df, metric, chart_title):
               template='plotly_white',
               )
     
+    # save as a static image
+    # image_name = chart_title.replace(" ", "_").replace("-", "_").replace(":", "_")
+    image_name = re.sub(r"[\W]+", "_", chart_title) # replace any non-word character with an underscore
+    fig.write_image(f"images/{image_name}.png")
+    
     
     return fig.show()
 
 
 
+# define a function that visualises the volume of a metric over time, given a dataframe and a metric name as input
 def viz_video_counts(df, chart_title):
     """Returns a bar chart displaying the number of videos released in each month.
 
@@ -147,5 +154,11 @@ def viz_video_counts(df, chart_title):
                  template='plotly_white'
                  )
     
+    # save as a static image
+    # image_name = chart_title.replace(" ", "_")
+    image_name = re.sub(r"[\W]+", "_", chart_title) # replace any non-word character with an underscore
+
+    fig.write_image(f"images/{image_name}.png")
+
     
     fig.show()
