@@ -15,6 +15,7 @@
 /notebooks/.ipynb_checkpoints/**
 /__pycache__/**
 /src/.ipynb_checkpoints/**
+/src/api/.ipynb_checkpoints/**
 /src/data/.ipynb_checkpoints/**
 /src/data/__pycache__/**
 /src/exploration/.ipynb_checkpoints/**
